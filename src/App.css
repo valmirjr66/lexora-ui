@@ -1,0 +1,325 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #3c3c3c;
+}
+
+.appContent {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  justify-content: center;
+  background-color: #323232;
+  background-size: cover;
+}
+
+.messagesList {
+  list-style: none;
+  padding-left: 0;
+  flex-grow: 1;
+  overflow: auto;
+  background-color: #3a3a3a;
+  border: rgba(255, 255, 255, 0.8) solid 1px;
+  border-radius: 8px;
+}
+
+.messagesMessage {
+  display: flex;
+  margin-top: 10px;
+}
+
+.messagesMessage.currentMember {
+  flex-direction: row-reverse;
+}
+
+.avatar {
+  height: 35px;
+  min-width: 35px;
+  border-radius: 50%;
+}
+
+.messagesMessage > .avatar {
+  margin: 0 10px -10px;
+}
+
+.username {
+  color: lightgray;
+  font-size: 14px;
+  display: flex;
+}
+
+.messageContent > .username {
+  padding-bottom: 4px;
+}
+
+.messageContent > .messageText {
+  padding: 10px;
+  margin: 0;
+  border-radius: 12px;
+  color: white;
+  display: inline-block;
+}
+
+.messageContent > .messageText > div {
+  margin-top: 6px;
+}
+
+.currentMember > .messageContent .messageText {
+  background-color: #57577d;
+  border-top-right-radius: 0;
+  color: white;
+}
+
+.appHeader {
+  width: 100%;
+  background-color: #3a3a3a;
+  color: #fff;
+  height: 75px;
+  border-bottom: rgba(255, 255, 255, 0.5) solid 1px;
+  display: flex;
+  align-items: center;
+}
+
+.appWrapper {
+  display: flex;
+  width: 100vw;
+  height: 100%;
+}
+
+.panelWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid white;
+  border-radius: 8px;
+}
+
+.panelHeader {
+  color: white;
+  background-color: #525252;
+  width: 100%;
+  height: 50px;
+  border-radius: 8px 8px 0px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.previewImage {
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
+.previewCaption {
+  margin-bottom: 10px;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.appInner {
+  display: flex;
+}
+
+.loginWrapper {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: bottom;
+  background-color: #3c3c3c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  flex-direction: column;
+}
+
+.loginContainer {
+  background-color: #3a3a3a;
+  padding: 24px 32px;
+  border: rgba(255, 255, 255, 0.8) solid 1px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 350px;
+}
+
+.signupContainer {
+  background-color: #3a3a3a;
+  padding: 24px 32px;
+  border: rgba(255, 255, 255, 0.8) solid 1px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 30vw;
+  height: 45vh;
+}
+
+.fieldWrapper {
+  margin-bottom: 32px;
+  display: flex;
+  width: 100%;
+}
+
+.fieldWrapper > label {
+  background-color: #dfdfdf;
+  color: black;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px 0px 0px 10px;
+  padding: 0px 10px;
+}
+
+.fieldWrapper > input {
+  padding: 5px 5px 5px 15px;
+  border-radius: 0px 10px 10px 0px;
+}
+
+.customCursorTypeAnimation::after {
+  content: "_";
+  animation: cursor 1.1s infinite step-start;
+}
+
+@keyframes cursor {
+  20% {
+    opacity: 0;
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.tinyTiltPointer:hover {
+  transform: rotate(10deg);
+}
+
+.goBluePointer:hover {
+  filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(200deg)
+    brightness(80%) contrast(100%);
+}
+
+.goRedPointer:hover {
+  filter: invert(30%) sepia(100%) saturate(4000%) hue-rotate(0deg)
+    brightness(90%) contrast(120%);
+}
+
+.gotYellowPointer:hover {
+  filter: brightness(0) saturate(100%) invert(73%) sepia(61%) saturate(537%)
+    hue-rotate(5deg) brightness(94%) contrast(82%);
+}
+
+.promptSuggestion {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.promptSuggestion:hover {
+  text-decoration: underline;
+}
+
+.settingsPanel {
+  background-color: #3a3a3a;
+  padding: 24px 32px;
+  border: rgba(255, 255, 255, 0.8) solid 1px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 300px;
+}
+
+.settingsContent {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  background-color: #323232;
+  padding: 16px 16px;
+  background-size: cover;
+}
+
+.passwordPanel {
+  background-color: #3a3a3a;
+  padding: 24px 32px;
+  border: rgba(255, 255, 255, 0.8) solid 1px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.previousPromptArrow {
+  margin-left: 16px;
+  cursor: pointer;
+  transform: translateY(-4px);
+}
+
+.previousPromptArrow:hover {
+  filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(100deg)
+    brightness(80%) contrast(100%);
+}
+
+.profilePicContainer {
+  position: relative;
+}
+
+.profilePicImg {
+  box-sizing: border-box;
+  width: 100px;
+  display: block;
+  border-radius: 50%;
+  margin-top: -75px;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+.profilePicOverlay {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100px;
+  transition: 0.5s ease;
+  opacity: 0;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.profilePicContainer:hover .profilePicOverlay {
+  opacity: 1;
+}
+
+.editIcon {
+  cursor: pointer;
+}
+
+.editIcon:hover {
+  filter: brightness(0) saturate(100%) invert(80%) sepia(92%) saturate(988%)
+    hue-rotate(1deg) brightness(109%) contrast(109%);
+}
