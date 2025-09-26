@@ -72,7 +72,7 @@ export default function Dashboard() {
 
     try {
       const { data } = await httpCallers.get(
-        `assistants/thaya-md/chat?userId=${localStorage.getItem("userId")}`
+        `assistants/lexora/chat?userId=${localStorage.getItem("userId")}`
       );
 
       const chatMessages = data.items || [];
