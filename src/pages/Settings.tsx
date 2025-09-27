@@ -139,7 +139,7 @@ export default function Settings() {
     closeProfilePicDialog();
   };
 
-  const headerButtons = ["logout", "chat"] as HeaderButtons[];
+  const headerButtons: HeaderButtons[] = ["logout", "dashboard"];
 
   if (user === null) {
     return (

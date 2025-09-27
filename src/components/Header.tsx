@@ -19,7 +19,9 @@ export default function Header({
 
   return (
     <header className="appHeader" style={{ justifyContent: "space-between" }}>
-      <div style={{ display: "flex" }}>
+      <div
+        style={{ display: "flex", width: "100%", justifyContent: "flex-end" }}
+      >
         {buttonsToRender.map((item) => {
           switch (item) {
             case "settings":
