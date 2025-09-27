@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button, Input, InputLabel } from "@mui/material";
 import { SyntheticEvent, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { ToastContainer } from "react-toastify";
@@ -57,42 +57,48 @@ export default function Login(props: { shouldShowSignup?: boolean }) {
       <ToastContainer />
       <main className="loginWrapper">
         {
-            <p>
+          <p>
             <TypeAnimation
               sequence={[
-              "I'm here to help you transcribe interviews effortlessly",
-              5000,
-              "I'm here to help you manage interview scripts seamlessly",
-              5000,
-              "I'm here to help you organize interview notes efficiently",
-              5000,
-              "I'm here to help you streamline your interview workflow",
-              5000,
+                "I'm here to help you transcribe interviews effortlessly",
+                5000,
+                "I'm here to help you manage interview scripts seamlessly",
+                5000,
+                "I'm here to help you organize interview notes efficiently",
+                5000,
+                "I'm here to help you streamline your interview workflow",
+                5000,
               ]}
               speed={70}
               wrapper="span"
               repeat={Infinity}
             />
-            </p>
+          </p>
         }
         <form className="loginContainer" onSubmit={submitCallback}>
           <div className="fieldWrapper">
-            <label htmlFor="email">E-mail</label>
-            <input
-              id="email"
+            <InputLabel htmlFor="email" style={{ width: 100 }}>
+              E-mail
+            </InputLabel>
+            <Input
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               disabled={authenticating}
+              fullWidth
+              style={{ padding: "0px 8px" }}
             />
           </div>
           <div className="fieldWrapper">
-            <label htmlFor="password">Password</label>
-            <input
+            <InputLabel htmlFor="password" style={{ width: 125 }}>
+              Password
+            </InputLabel>
+            <Input
               type="password"
-              id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               disabled={authenticating}
+              fullWidth
+              style={{ padding: "0px 8px" }}
             />
           </div>
           {authenticating ? (
