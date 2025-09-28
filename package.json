@@ -2,6 +2,7 @@
   "name": "lexora.ui",
   "description": "Lexora UI",
   "version": "1.0.0",
+  "type": "module",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.13.3",
@@ -11,6 +12,7 @@
     "@mui/x-date-pickers": "^8.4.0",
     "@react-router/dev": "^7.6.0",
     "@react-router/serve": "^7.6.0",
+    "@tailwindcss/vite": "^4.1.13",
     "@vitejs/plugin-react": "^4.5.0",
     "axios": "^1.9.0",
     "dayjs": "^1.11.13",
@@ -26,6 +28,7 @@
     "react-type-animation": "^3.2.0",
     "remark-gfm": "^4.0.1",
     "socket.io-client": "^4.8.1",
+    "tailwindcss": "^4.1.13",
     "uuid": "^11.1.0",
     "web-vitals": "^5.0.1",
     "zustand": "^5.0.5"
