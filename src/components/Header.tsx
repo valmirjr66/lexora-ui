@@ -1,10 +1,11 @@
 import ChatIcon from "@mui/icons-material/Chat";
+import DescriptionIcon from "@mui/icons-material/Description";
 import LogoutIcon from "@mui/icons-material/Logout";
 import SettingsIcon from "@mui/icons-material/Settings";
 import { Box } from "@mui/material";
 import { useNavigate } from "react-router";
 
-export type HeaderButtons = "settings" | "dashboard" | "logout";
+export type HeaderButtons = "settings" | "dashboard" | "scripts" | "logout";
 
 export type HeaderProps = {
   buttonsToRender: HeaderButtons[];
@@ -38,6 +39,16 @@ export default function Header({
               return (
                 <Box onClick={() => navigate("/dashboard")} key="chat">
                   <ChatIcon
+                    fontSize="medium"
+                    style={sharedIconsStyle}
+                    className="pointer goBluePointer"
+                  />
+                </Box>
+              );
+            case "scripts":
+              return (
+                <Box onClick={() => navigate("scripts")} key="scripts">
+                  <DescriptionIcon
                     fontSize="medium"
                     style={sharedIconsStyle}
                     className="pointer goBluePointer"
