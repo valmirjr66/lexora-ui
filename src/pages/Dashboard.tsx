@@ -24,33 +24,30 @@ export default function Dashboard() {
         reconnectionAttempts: Infinity,
       });
 
-      socketRef.current.on(
-        "message",
-        ({ textSnapshot, finished }) => {
-          if (finished) {
-            setWaitingAnswer(false);
+      socketRef.current.on("message", ({ textSnapshot, finished }) => {
+        if (finished) {
+          setWaitingAnswer(false);
+        }
+
+        setMessages((prevState) => {
+          const newState = [...prevState];
+
+          if (newState[newState.length - 1].role === "user") {
+            newState.push({
+              id: `packet-${uuidv4()}`,
+              role: "assistant",
+              content: "",
+              createdAt: new Date(),
+            });
           }
 
-          setMessages((prevState) => {
-            const newState = [...prevState];
+          const latestMsg = newState.pop()!;
 
-            if (newState[newState.length - 1].role === "user") {
-              newState.push({
-                id: `packet-${uuidv4()}`,
-                role: "assistant",
-                content: "",
-                createdAt: new Date(),
-              });
-            }
+          latestMsg.content = textSnapshot;
 
-            const latestMsg = newState.pop()!;
-
-            latestMsg.content = textSnapshot;
-
-            return [...newState, latestMsg];
-          });
-        }
-      );
+          return [...newState, latestMsg];
+        });
+      });
     }
 
     return () => {
@@ -127,7 +124,7 @@ export default function Dashboard() {
     <main className="app">
       <ToastContainer />
       <Header
-        buttonsToRender={["settings"]}
+        buttonsToRender={["scripts", "settings"]}
         sharedIconsStyle={{ marginRight: 25 }}
       />
       <div className="appWrapper">

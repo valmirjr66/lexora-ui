@@ -14,6 +14,7 @@ import "./index.css";
 import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Scripts from "./pages/Scripts";
 import Settings from "./pages/Settings";
 import reportWebVitals from "./reportWebVitals";
 import RestrictWrapper from "./RestrictWrapper";
@@ -73,6 +74,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
                 <Route path="/login" element={<Login />} />
                 <Route path="/dashboard" element={<RestrictWrapper />}>
                   <Route index element={<Dashboard />} />
+                  <Route path="scripts" element={<Scripts />} />
                   <Route path="settings" element={<Settings />} />
                 </Route>
                 <Route path="*" element={<div>404 Not Found</div>} />
