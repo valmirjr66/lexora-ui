@@ -9,6 +9,7 @@ import Font from "react-font";
 import { SkeletonTheme } from "react-loading-skeleton";
 import { BrowserRouter, Route, Routes } from "react-router";
 import "./App.css";
+import './i18n';
 import "./index.css";
 import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
